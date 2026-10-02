@@ -1,0 +1,505 @@
+/* ============================================
+   SERVICES PAGE — SPECIFIC STYLES
+   Palette: Pure Black & White Minimalism
+   ============================================ */
+
+/* ---------- PAGE HERO ---------- */
+.services-hero {
+    padding: 10rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+/* Constrain hero content to the left half so it doesn't overlap the floating icons */
+.services-hero .page-hero-content {
+    max-width: 55%;
+}
+
+.services-hero .page-hero-subtitle {
+    max-width: 90%;
+}
+
+.services-hero-visual {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 400px;
+    opacity: 0.08;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.service-icons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+}
+
+.service-icon-float {
+    width: 100%;
+    aspect-ratio: 1;
+    background: var(--black);
+    border-radius: var(--radius-md);
+    display: grid;
+    place-items: center;
+    animation: floatIcon 6s ease-in-out infinite;
+}
+
+.service-icon-float:nth-child(2) {
+    animation-delay: 1.5s;
+}
+
+.service-icon-float:nth-child(3) {
+    animation-delay: 3s;
+}
+
+.service-icon-float:nth-child(4) {
+    animation-delay: 4.5s;
+}
+
+.service-icon-float .material-icons-outlined {
+    font-size: 3rem;
+    color: var(--white);
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* ---------- SERVICES OVERVIEW ---------- */
+.services-overview {
+    background: var(--gray-100);
+}
+
+.section-intro {
+    font-size: 1.1rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+    max-width: 700px;
+    margin-top: 1.5rem;
+}
+
+.services-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.service-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2.5rem 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: all 0.4s var(--ease-out);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--black);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease-out);
+}
+
+.service-nav-link:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--black);
+}
+
+.service-nav-link:hover::before {
+    transform: scaleX(1);
+}
+
+.service-nav-link .material-icons-outlined {
+    font-size: 2.5rem;
+    color: var(--black);
+    transition: transform 0.4s var(--ease-out);
+}
+
+.service-nav-link:hover .material-icons-outlined {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.service-nav-link span:last-child {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--black);
+}
+
+/* ---------- SERVICE DETAIL SECTIONS ---------- */
+.service-detail {
+    padding: 6rem 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.service-detail-alt {
+    background: var(--gray-100);
+}
+
+.service-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+.service-detail-header {
+    position: sticky;
+    top: 120px;
+}
+
+.service-number {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 500;
+    color: var(--gray-200);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    margin-bottom: 1.5rem;
+}
+
+.service-icon-large {
+    width: 72px;
+    height: 72px;
+    background: var(--black);
+    color: var(--white);
+    border-radius: var(--radius-md);
+    display: grid;
+    place-items: center;
+    margin-bottom: 2rem;
+}
+
+.service-icon-large .material-icons-outlined {
+    font-size: 2.2rem;
+}
+
+.service-detail-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.service-detail-intro {
+    font-size: 1.1rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+}
+
+.service-features h3 {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    margin-bottom: 1.5rem;
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.feature-list li {
+    display: flex;
+    gap: 1.2rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    transition: all 0.4s var(--ease-out);
+}
+
+.service-detail-alt .feature-list li {
+    background: var(--white);
+}
+
+.feature-list li:hover {
+    border-color: var(--black);
+    transform: translateX(8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.feature-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    display: grid;
+    place-items: center;
+    transition: all 0.4s var(--ease-out);
+}
+
+.feature-list li:hover .feature-icon {
+    background: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+}
+
+.feature-icon .material-icons-outlined {
+    font-size: 1.3rem;
+}
+
+.feature-text h4 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.4rem;
+}
+
+.feature-text p {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.service-applications h3 {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    margin-bottom: 1.2rem;
+}
+
+.application-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.app-tag {
+    padding: 0.6rem 1.2rem;
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-radius: 100px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--gray-800);
+    transition: all 0.3s var(--ease-out);
+}
+
+.app-tag:hover {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+    transform: translateY(-2px);
+}
+
+/* ---------- ENGINEERING APPROACH ---------- */
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.approach-card {
+    padding: 2.5rem 2rem;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    transition: all 0.5s var(--ease-out);
+    position: relative;
+    overflow: hidden;
+}
+
+.approach-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--black);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease-out);
+}
+
+.approach-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: var(--black);
+}
+
+.approach-card:hover::before {
+    transform: scaleX(1);
+}
+
+.approach-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--black);
+    color: var(--white);
+    border-radius: var(--radius-sm);
+    display: grid;
+    place-items: center;
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s var(--ease-out);
+}
+
+.approach-card:hover .approach-icon {
+    transform: rotate(-6deg) scale(1.05);
+}
+
+.approach-icon .material-icons-outlined {
+    font-size: 1.7rem;
+}
+
+.approach-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.8rem;
+}
+
+.approach-card p {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ---------- TECHNOLOGIES ---------- */
+.technologies {
+    background: var(--black);
+    color: var(--white);
+}
+
+.technologies .section-label {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.technologies .section-title {
+    color: var(--white);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.tech-category h4 {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.tech-list span {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--white);
+    transition: all 0.3s var(--ease-out);
+}
+
+.tech-list span:hover {
+    background: var(--white);
+    color: var(--black);
+    border-color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+    .services-nav {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .service-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .service-detail-header {
+        position: static;
+    }
+    .approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .services-hero-visual {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-nav {
+        grid-template-columns: 1fr;
+    }
+    .approach-grid {
+        grid-template-columns: 1fr;
+    }
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+    .service-number {
+        font-size: 3.5rem;
+    }
+    .service-icon-large {
+        width: 60px;
+        height: 60px;
+    }
+    .service-icon-large .material-icons-outlined {
+        font-size: 1.8rem;
+    }
+    .feature-list li {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-detail {
+        padding: 4rem 0;
+    }
+    .feature-list li {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
